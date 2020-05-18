@@ -1,7 +1,8 @@
 
-#define motorPin 3
-const int read = A1;
-int value;     		
+#define motorPin 5
+const int read = A1;		
+
+int value;
 
 void setup()
 {
@@ -12,6 +13,7 @@ void setup()
 
 void loop()
 {
+  
   value = analogRead(read); //Read data from analog pin and store it to value variable
   
   if (value>480){ 

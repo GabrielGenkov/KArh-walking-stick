@@ -1,24 +1,25 @@
 #include <Wire.h>
 #include "BH1750.h"
-#define motorPin 3
+#define led 5
 
 BH1750 lightMeter;
  
  
 void setup(){
   Serial.begin(9600);
-  pinMode(motorPin, OUTPUT);
+  pinMode(led, OUTPUT);
   lightMeter.begin();
 }
  
  
 void loop(){
   uint16_t lux = lightMeter.readLightLevel();
-  if(lux < 50){
-    digitalWrite(motorPin, HIGH);
+  if(lux < 75){
+    digitalWrite(led, HIGH);
+    
   }
   else{
-    digitalWrite(motorPin, LOW);
+    digitalWrite(led, LOW);
   }
   Serial.print("Light: ");
   Serial.print(lux);

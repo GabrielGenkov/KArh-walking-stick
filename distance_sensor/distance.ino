@@ -1,6 +1,6 @@
 #define trigPin 6
 #define echoPin 7
-#define motorPin 3
+#define buzzer 8
 
 long duration;
 int distance;
@@ -8,12 +8,12 @@ int distance;
 void setup() {
 pinMode(trigPin, OUTPUT);
 pinMode(echoPin, INPUT);
-pinMode(motorPin, OUTPUT);
+pinMode(buzzer, OUTPUT);
 Serial.begin(9600);
 }
 
 void loop() {
-digitalWrite(trigPin, LOW);
+digitalWrite(trigPin, LOW);;
 digitalWrite(trigPin, HIGH);
 digitalWrite(trigPin, LOW);
 
@@ -26,51 +26,50 @@ Serial.print(" cm\n");
 
 
 if(distance >= 200){
-    digitalWrite(motorPin, HIGH);
-  delay(5000);  
-      digitalWrite(motorPin, LOW);
+    tone(buzzer, 5000, 125); 
+    //noTone(buzzer);
+    delay(5000);
 }
 else if(distance >= 150 && distance < 200){
-    digitalWrite(motorPin, HIGH);
-  delay(4000);
-      digitalWrite(motorPin, LOW);
+    tone(buzzer, 5000, 125); 
+    //noTone(buzzer);
+    delay(4000);
     
 }
 else if(distance >= 100 && distance < 150){
-    digitalWrite(motorPin, HIGH);
-  delay(3000);
-     digitalWrite(motorPin, LOW); 
+    tone(buzzer, 5000, 125);
+    //noTone(buzzer);
+    delay(3000);
 }
 else if(distance >= 50 && distance < 100){
-    digitalWrite(motorPin, HIGH);
-  delay(2000); 
-      digitalWrite(motorPin, LOW);
+   tone(buzzer, 5000, 125);
+    //noTone(buzzer);
+    delay(2000);
 }
 else if(distance >= 40 && distance < 50){
-    digitalWrite(motorPin, HIGH);
-  delay(1500); 
-      digitalWrite(motorPin, LOW);
+    tone(buzzer, 5000, 125);  
+    //noTone(buzzer);
+    delay(1500);
 }
 else if(distance >= 30 && distance < 40){
-    digitalWrite(motorPin, HIGH);
-  delay(1000); 
-      digitalWrite(motorPin, LOW);
+    tone(buzzer, 5000, 125);
+      //noTone(buzzer);
+      delay(1000);
 }
 else if(distance >= 20 && distance < 30){
-      digitalWrite(motorPin, HIGH);
-  //tone(buzzer, 1000, 500);
-  delay(500); 
-      digitalWrite(motorPin, LOW);
+      tone(buzzer, 5000, 125);  
+      //noTone(buzzer);
+      delay(500);
 }
 else if(distance >= 10 && distance < 20){
-      digitalWrite(motorPin, HIGH);
-  delay(250); 
-      digitalWrite(motorPin, LOW);
+     tone(buzzer, 5000, 125); 
+      //noTone(buzzer);
+      delay(250);
 }
 else if(distance < 10){
-      digitalWrite(motorPin, HIGH);
-  delay(125); 
-      digitalWrite(motorPin, LOW);
+      tone(buzzer, 5000, 125);  
+      //noTone(buzzer);
+      delay(125);
 }
 
 }
