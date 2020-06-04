@@ -1,0 +1,55 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:+9V #PWR?
+U 1 1 5ED94867
+P 2300 1250
+F 0 "#PWR?" H 2300 1100 50  0001 C CNN
+F 1 "+9V" H 2315 1423 50  0000 C CNN
+F 2 "" H 2300 1250 50  0001 C CNN
+F 3 "" H 2300 1250 50  0001 C CNN
+	1    2300 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L My_lib:Arduino_Nano U?
+U 1 1 5EDA5582
+P 1850 1650
+F 0 "U?" H 2825 1815 50  0000 C CNN
+F 1 "Arduino_Nano" H 2825 1724 50  0000 C CNN
+F 2 "" H 2850 1600 50  0001 C CNN
+F 3 "" H 2850 1600 50  0001 C CNN
+	1    1850 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1250 2300 1900
+$Comp
+L pspice:0 #GND?
+U 1 1 5EDABEF2
+P 1850 2100
+F 0 "#GND?" H 1850 2000 50  0001 C CNN
+F 1 "0" H 1850 2189 50  0000 C CNN
+F 2 "" H 1850 2100 50  0001 C CNN
+F 3 "~" H 1850 2100 50  0001 C CNN
+	1    1850 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 2100 1850 2000
+Wire Wire Line
+	1850 2000 2300 2000
+$EndSCHEMATC
